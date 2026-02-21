@@ -5,7 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -114,19 +117,41 @@ fun Targeta(){
         )
 
         HorizontalDivider(
-            modifier = Modifier.padding(vertical = 8.dp),
+            modifier = Modifier.padding(vertical = 20.dp),
             thickness = 1.dp,
             color = Color.Gray
         )
 
+        Text( modifier = Modifier.padding(top = 0.dp, bottom = 20.dp),
+            text = "SOBRE MI MATERIA FAVORITA",
+            fontSize = 17.sp,
+            color = Color.Gray
+        )
 
+        Text( modifier = Modifier.padding(top = 0.dp, bottom = 20.dp),
+            text = "Me apasiona el Desarrollo de Aplicaciones Moviles porque permite transformar ideas en herramientas tangibles que las personas usan a diario. Me encanta el reto de diseñar interfaces intuitivas.",
+            fontSize = 19.sp,
+            color = Color.Black,
+            textAlign = TextAlign.Start
+        )
 
-
-
-
-
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(),              // 👈 toma el alto restante
+            contentAlignment = Alignment.BottomCenter // 👈 lo pega abajo
+        ) {
+            Text(
+                text = "Contactar Conmigo",
+                fontSize = 25.sp,
+                color = Color.White,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(CircleShape)
+                    .background(Color.Blue)
+                    .padding(vertical = 20.dp)
+            )
+        }
     }
-
-
-
 }
